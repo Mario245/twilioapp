@@ -1,9 +1,9 @@
-class CreateSms < ActiveRecord::Migration
+class CreateSmsmsgs < ActiveRecord::Migration
   def change
-    create_table :sms do |t|
+    create_table :smsmsgs do |t|
       t.string :to
       t.string :from
-      t.string :body
+      t.text :message
 
       t.timestamps null: false
     end

@@ -8,6 +8,8 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'twilio-ruby'
 gem 'spring'
+gem 'twilio-ruby'
+gem 'figaro'
 group :development, :test do
   gem 'byebug'
 end

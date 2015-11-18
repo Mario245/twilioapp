@@ -1,0 +1,2 @@
+module SmsmsgsHelper
+end

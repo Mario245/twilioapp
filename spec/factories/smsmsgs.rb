@@ -1,8 +1,8 @@
 FactoryGirl.define do
-  factory :sm do
+  factory :smsmsg do
     to "MyString"
 from "MyString"
-body "MyString"
+message "MyText"
   end
 
 end

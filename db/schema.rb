@@ -11,12 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151118040817) do
+ActiveRecord::Schema.define(version: 20151118222803) do
 
   create_table "sms", force: :cascade do |t|
     t.string   "to"
     t.string   "from"
     t.string   "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "smsmsgs", force: :cascade do |t|
+    t.string   "to"
+    t.string   "from"
+    t.text     "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

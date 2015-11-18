@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>To:</strong>
+  <%= @smsmsg.to %>
+</p>
+
+<p>
+  <strong>From:</strong>
+  <%= @smsmsg.from %>
+</p>
+
+<p>
+  <strong>Message:</strong>
+  <%= @smsmsg.message %>
+</p>
+
+<%= link_to 'Edit', edit_smsmsg_path(@smsmsg) %> |
+<%= link_to 'Back', smsmsgs_path %>
