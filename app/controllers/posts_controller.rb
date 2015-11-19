@@ -13,11 +13,11 @@ class PostsController < ApplicationController
  
 
     def receive_text
-      @post = Post.new(:body => params["Body"], :from => params["From"], :to => params["To"])
-      response = Twilio::TwiML::Response.new do |r|
-        r.Message 'Your Text has been received'
+      #@post = Post.new(:body => params["Body"], :from => params["From"], :to => params["To"])
+      twiml = Twilio::TwiML::Response.new do |r|
+        r.Sms 'Your Text has been received'
     end  
-      render_twiml response
+      twiml.text
     end
 
 
