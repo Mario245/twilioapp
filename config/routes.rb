@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-	get '/posts/receive_text' => 'posts#receive_text'
+	post '/posts/receive_text' => 'posts#receive_text'
   resources :posts
   
   #receive_text'
