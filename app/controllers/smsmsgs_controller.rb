@@ -1,10 +1,28 @@
+require 'twilio-ruby'
+
 class SmsmsgsController < ApplicationController
+  include Webhookable
   before_action :set_smsmsg, only: [:show, :edit, :update, :destroy]
+
+  after_filter :set_header
+
+  skip_before_action :verify_authenticity_token
 
   # GET /smsmsgs
   # GET /smsmsgs.json
   def index
     @smsmsgs = Smsmsg.all
+  end
+
+    def receive_text
+      @smsmsg = smsmsg.new(:message => params["Body"], :from => params["From"], :to => params["To"])
+      @smsmsg.save
+
+    twiml = Twilio::TwiML::Response.new do |r|
+      r.Message 'Your Text has been received '
+    end  
+
+    twiml.text
   end
 
   # GET /smsmsgs/1
