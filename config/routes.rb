@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
+	 resources :posts
 	post '/posts/receive_text' => 'posts#receive_text'
 	get '/posts/receive_text' => 'posts#receive_text'
-  resources :posts
+ 
   
   #receive_text'
   resources :smsmsgs
