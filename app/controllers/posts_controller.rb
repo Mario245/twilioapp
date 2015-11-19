@@ -14,11 +14,11 @@ class PostsController < ApplicationController
 
     def receive_text
       #@post = Post.new(:body => params["Body"], :from => params["From"], :to => params["To"])
-      twiml = Twilio::TwiML::Response.new do |r|
-        r.Sms 'Your Text has been received'
-    end  
-      twiml.text
-    end
+      
+      client = Twilio::REST::Client.new Rails.application.secrets.twilio_account_sid, Rails.application.secrets.twilio_auth_token
+      message = client.messages.create from: '3475779547', to: '3472795257', body: 'Learning to send SMS you are.'
+      render plain: message.status
+   end
 
 
   
