@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151118222803) do
+ActiveRecord::Schema.define(version: 20151119035058) do
+
+  create_table "posts", force: :cascade do |t|
+    t.string   "to"
+    t.string   "from"
+    t.text     "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "sms", force: :cascade do |t|
     t.string   "to"

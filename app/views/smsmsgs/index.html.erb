@@ -2,30 +2,6 @@
 
 <h1>Listing Smsmsgs</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>To</th>
-      <th>From</th>
-      <th>Message</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+ 
 
-  <tbody>
-    <% @smsmsgs.each do |smsmsg| %>
-      <tr>
-        <td><%= smsmsg.to %></td>
-        <td><%= smsmsg.from %></td>
-        <td><%= smsmsg.message %></td>
-        <td><%= link_to 'Show', smsmsg %></td>
-        <td><%= link_to 'Edit', edit_smsmsg_path(smsmsg) %></td>
-        <td><%= link_to 'Destroy', smsmsg, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<br>
-
-<%= link_to 'New Smsmsg', new_smsmsg_path %>

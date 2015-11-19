@@ -1,4 +1,4 @@
-require 'twilio-ruby'
+#require 'twilio-ruby'
 
 class SmsmsgsController < ApplicationController
   include Webhookable
@@ -15,7 +15,7 @@ class SmsmsgsController < ApplicationController
   end
 
     def receive_text
-      @smsmsg = smsmsg.new(:message => params["Body"], :from => params["From"], :to => params["To"])
+      @smsmsg = Smsmsg.new(:message => params["Body"], :from => params["From"], :to => params["To"])
       @smsmsg.save
 
     twiml = Twilio::TwiML::Response.new do |r|
