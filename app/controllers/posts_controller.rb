@@ -12,23 +12,19 @@ class PostsController < ApplicationController
   # GET /posts.json
  
 
-    def receive_text
+    def twilio_create
       #@post = Post.new(:body => params["Body"], :from => params["From"], :to => params["To"])
       
-      client = Twilio::REST::Client.new Rails.application.secrets.twilio_sid, Rails.application.secrets.twilio_token
-      message = client.messages.create from: '3472795257', to: 'to', body: '3475779547'
-      render plain: message.status
-   end
-
-   def twilio_create
+      @client = Twilio::REST::Client.new Rails.application.secrets.twilio_sid, Rails.application.secrets.twilio_token
+      message = client.messages.create from: =>' params['to']', to: => params['from'], body: => 'Thanks for your message.'
+      #render plain: message.status
+  
     @post = Post.new(:body => params['body'], :from => params['from'], :to => params['to'])
     @post.save
 
-    twiml = Twilio::TwiML::Response.new do |r|
-      r.Message 'Your Text has been received '
-    end  
+   
 
-    twiml.text
+   
   end
 
 
