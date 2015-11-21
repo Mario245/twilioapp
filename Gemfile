@@ -7,7 +7,6 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'twilio-ruby'
-gem 'spring'
 gem 'figaro'
 group :development, :test do
   gem 'byebug'
