@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-	resources :posts
+
 	post '/posts/twilio_create' => 'posts#twilio_create'
 	get '/posts/twilio_create' => 'posts#twilio_create'
- 
+ 	resources :posts
   
   #receive_text'
   resources :smsmsgs
