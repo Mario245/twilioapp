@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-	 resources :posts
-	post '/posts/receive_text' => 'posts#receive_text'
-	get '/posts/receive_text' => 'posts#receive_text'
+	resources :posts
+	post '/posts/twilio_create' => 'posts#twilio_create'
+	get '/posts/twilio_create' => 'posts#twilio_create'
  
   
   #receive_text'

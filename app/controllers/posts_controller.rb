@@ -16,7 +16,7 @@ class PostsController < ApplicationController
       #@post = Post.new(:body => params["Body"], :from => params["From"], :to => params["To"])
       
       @client = Twilio::REST::Client.new Rails.application.secrets.twilio_sid, Rails.application.secrets.twilio_token
-      message = client.messages.create(from: => params['to'], to: => params['from'], body: => 'Thanks for your message.')
+      message = client.messages.create(from: => params['To'], to: => params['From'], body: => 'Thanks for your message.')
       #render plain: message.status
   
     @post = Post.new(:body => params['body'], :from => params['from'], :to => params['to'])
