@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>To:</strong>
+  <%= @msg.to %>
+</p>
+
+<p>
+  <strong>From:</strong>
+  <%= @msg.from %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @msg.body %>
+</p>
+
+<%= link_to 'Edit', edit_msg_path(@msg) %> |
+<%= link_to 'Back', msgs_path %>
