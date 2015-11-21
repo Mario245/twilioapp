@@ -8,13 +8,14 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'twilio-ruby'
 gem 'figaro'
+ gem 'spring'
 
 group :development, :test do
   gem 'byebug'
 end
 group :development do
   gem 'web-console', '~> 2.0'
-  gem 'spring'
+
 end
 gem 'bootstrap-sass'
 gem 'devise'
