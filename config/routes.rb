@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+	post '/messages/twilio_create' => 'messages#twilio_create'
+	get '/messages/twilio_create' => 'messages#twilio_create'
 
   resources :messages
 	post '/posts/twilio_create' => 'posts#twilio_create'
