@@ -42,7 +42,7 @@ class MessagesController < ApplicationController
 
   def twilio_create
     @message = Message.new
-    @message = Message.new(:body => params["Body"], :from => params["From"], :to => params["To"])
+    @message = Message.new(:message => params["Body"], :from => params["From"], :to => params["To"])
     @message.save
 
     response = Twilio::TwiML::Response.new do |r|
