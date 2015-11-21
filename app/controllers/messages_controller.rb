@@ -1,5 +1,8 @@
 class MessagesController < ApplicationController
+    include Webhookable
+  skip_before_action :verify_authenticity_token
   before_action :set_message, only: [:show, :edit, :update, :destroy]
+  after_filter :set_header
 
   # GET /messages
   # GET /messages.json
@@ -38,7 +41,8 @@ class MessagesController < ApplicationController
   end
 
   def twilio_create
-    @message = Message.new(:body => params["Body"], :from => params["From"])
+    @message = Message.new
+    @message = Message.new(:body => params["Body"], :from => params["From"] :to => params["To"])
     @message.save
 
     response = Twilio::TwiML::Response.new do |r|
