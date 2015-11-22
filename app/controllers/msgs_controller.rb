@@ -1,6 +1,13 @@
-class MsgsController < ApplicationController
-  before_action :set_msg, only: [:show, :edit, :update, :destroy]
 
+require 'twilio-ruby'
+class MsgsController < ApplicationController
+   skip_before_action :verify_authenticity_token
+
+
+ def new
+  @msg = Msg.new
+  redirect_to :action => 'msgs/twilio_create'
+ end
 
   def twilio_create
   
@@ -10,7 +17,6 @@ class MsgsController < ApplicationController
     response = Twilio::TwiML::Response.new do |r|
       r.Message 'Your Text has been received '
 
-      redirect_to :action => 'tenants/create'
     end
     end 
 
