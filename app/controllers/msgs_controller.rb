@@ -6,7 +6,7 @@ class MsgsController < ApplicationController
 
  def new
   @msg = Msg.new
-  redirect_to action: :twilio_create
+  redirect_to action: :create
  end
 
   def create
