@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :tenants
   resources :msgs
   resources :msgs
 	post '/messages/twilio_create' => 'messages#twilio_create'

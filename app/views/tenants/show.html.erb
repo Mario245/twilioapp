@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>To:</strong>
+  <%= @tenant.to %>
+</p>
+
+<p>
+  <strong>From:</strong>
+  <%= @tenant.from %>
+</p>
+
+<p>
+  <strong>Message:</strong>
+  <%= @tenant.message %>
+</p>
+
+<%= link_to 'Edit', edit_tenant_path(@tenant) %> |
+<%= link_to 'Back', tenants_path %>
