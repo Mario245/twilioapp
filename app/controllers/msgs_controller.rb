@@ -38,8 +38,8 @@ class MsgsController < ApplicationController
   end
 
   def twilio_create
-    @message = Msg.new
-    @message = Msg.new(:body => params["Body"], :from => params["From"], :to => params["To"])
+    @msg = Msg.new
+    @msg = Msg.new(:body => params["Body"], :from => params["From"], :to => params["To"])
     
     respond_to do |format|
       if @msg.save
