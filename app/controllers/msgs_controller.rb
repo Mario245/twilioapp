@@ -44,7 +44,7 @@ class MsgsController < ApplicationController
     response = Twilio::TwiML::Response.new do |r|
       r.Message 'Your Text has been received '
 
-      redirect_to :action => 'create'
+      redirect_to :action => 'msgs/create'
     end
     end 
 
