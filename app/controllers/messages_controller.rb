@@ -43,7 +43,10 @@ class MessagesController < ApplicationController
   def twilio_create
     @message = Message.new
     @message = Message.new(:message => params["Body"], :from => params["From"], :to => params["To"])
-    @message.to_json
+    respond_to do |format|
+    format.html # index.html.erb
+    
+end
     respond_to do |format|
       if @message.save
         format.html { redirect_to @message, notice: 'Message was successfully created.' }
@@ -55,9 +58,9 @@ class MessagesController < ApplicationController
     end
 
 
-    response = Twilio::TwiML::Response.new do |r|
-      r.Message 'Your Text has been received '
-    end  
+   # response = Twilio::TwiML::Response.new do |r|
+   #   r.Message 'Your Text has been received '
+   # end  
 
     render_twiml response
   end
