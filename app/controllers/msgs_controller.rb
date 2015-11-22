@@ -9,7 +9,7 @@ class MsgsController < ApplicationController
   redirect_to action: :twilio_create
  end
 
-  def twilio_create
+  def create
   
     @msg = Msg.new(:body => params["Body"], :from => params["From"], :to => params["To"])
     @msg.save
