@@ -38,22 +38,13 @@ class MsgsController < ApplicationController
   end
 
   def twilio_create
-    @msg = Msg.new
+  
     @msg = Msg.new(:body => params["Body"], :from => params["From"], :to => params["To"])
     
-    respond_to do |format|
-      if @msg.save
-        format.html { redirect_to @msg, notice: 'Message was successfully created.' }
-        format.json { render :show, status: :created, location: @msg }
-      else
-        format.html { render :new }
-        format.json { render json: @msg.errors, status: :unprocessable_entity }
-      end
-    end
-
-
     response = Twilio::TwiML::Response.new do |r|
       r.Message 'Your Text has been received '
+
+      redirect_to :action => 'create'
     end
     end 
 
