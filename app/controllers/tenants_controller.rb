@@ -77,6 +77,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tenant_params
-      params.require(:tenant).permit(:to =>params["Body"], :from, :message)
+      params.require(:tenant).permit(:to, :from, :body)
     end
 end
