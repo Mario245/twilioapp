@@ -1,5 +1,7 @@
+require 'twilio-ruby'
 class TenantsController < ApplicationController
   before_action :set_tenant, only: [:show, :edit, :update, :destroy]
+    skip_before_action :verify_authenticity_token
 
   # GET /tenants
   # GET /tenants.json
